@@ -1,5 +1,4 @@
 import HeroSection from "@/components/HeroSection";
-import AutoplayAudio '../components/AutoplayAudio.js';
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import ServicesSection from "@/components/Services";
@@ -7,7 +6,7 @@ import Benefits from "@/components/Benefits";
 import Pricing from "@/components/Pricing";
 import FAQSection from "@/components/FrequentlyAsked";
 import Footer from "@/components/Footer";
-
+import AutoplayAudio from "@/components/AutoplayAudio";
 export default function Home() {
 	return (
 		<>
