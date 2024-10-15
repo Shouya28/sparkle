@@ -1,8 +1,9 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "../styles/globals.css";
 import FloatingCTA from "@/components/FloatingCTA";
-import AutoplayAudio from "@/components/AutoplayAudio"; // Tambahkan import ini
+import AutoplayAudio from "@/components/AutoplayAudio"; // Tambahkan ini
 
 const font = GeistSans;
 
@@ -45,7 +46,7 @@ export default function RootLayout({
             <link rel="icon" href="/assets/logo.ico" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <body className={font.className}>
-                <AutoplayAudio /> {/* Tambahkan komponen AutoplayAudio di sini */}
+                <AutoplayAudio /> {/* Tempatkan di sini untuk autoplay di semua halaman */}
                 {children}
                 <FloatingCTA />
             </body>
