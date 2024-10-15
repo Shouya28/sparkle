@@ -15,7 +15,7 @@ const AutoplayAudio: React.FC = () => {
     }, []);
 
     return (
-        <audio ref={audioRef} src="/assets/music.mp3" autoPlay loop muted style={{ display: 'none' }} />
+        <audio ref={audioRef} src="public/assets/music.mp3" autoPlay loop muted style={{ display: 'none' }} />
     );
 };
 
