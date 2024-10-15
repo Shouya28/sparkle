@@ -1,4 +1,6 @@
 // components/AutoplayAudio.tsx
+"use client"; // Tambahkan ini untuk menandai sebagai Client Component
+
 import { useEffect, useRef } from 'react';
 
 const AutoplayAudio: React.FC = () => {
