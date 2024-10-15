@@ -1,16 +1,19 @@
+// components/AutoplayAudio.tsx
 import { useEffect, useRef } from 'react';
 
 const AutoplayAudio: React.FC = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     useEffect(() => {
-        audioRef.current?.play().catch((error) => {
-            console.log('Autoplay gagal:', error);
-        });
+        if (audioRef.current) {
+            audioRef.current.play().catch((error) => {
+                console.error('Autoplay gagal:', error);
+            });
+        }
     }, []);
 
     return (
-        <audio ref={audioRef} src="/assets/music.mp3" autoPlay loop style={{ display: 'none' }} />
+        <audio ref={audioRef} src="/assets/music.mp3" autoPlay loop muted style={{ display: 'none' }} />
     );
 };
 
