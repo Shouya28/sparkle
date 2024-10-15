@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-const AutoplayAudio = () => {
-    const audioRef = useRef(null);
+const AutoplayAudio: React.FC = () => {
+    const audioRef = useRef<HTMLAudioElement | null>(null);
 
     useEffect(() => {
-        audioRef.current.play().catch((error) => {
+        audioRef.current?.play().catch((error) => {
             console.log('Autoplay gagal:', error);
         });
     }, []);
