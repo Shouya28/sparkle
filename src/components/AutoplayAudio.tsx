@@ -1,21 +1,29 @@
 // components/AutoplayAudio.tsx
-"use client"; // Tambahkan ini untuk menandai sebagai Client Component
+"use client"; // Menandai ini sebagai Client Component
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const AutoplayAudio: React.FC = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
 
-    useEffect(() => {
+    const handlePlay = () => {
         if (audioRef.current) {
-            audioRef.current.play().catch((error) => {
-                console.error('Autoplay gagal:', error);
+            audioRef.current.play().then(() => {
+                setIsPlaying(true);
+            }).catch((error) => {
+                console.error('Error playing audio:', error);
             });
         }
-    }, []);
+    };
 
     return (
-        <audio ref={audioRef} src="public/assets/music.mp3" autoPlay loop muted style={{ display: 'none' }} />
+        <div>
+            <audio ref={audioRef} src="/assets/music.mp3" loop style={{ display: 'none' }} />
+            <button onClick={handlePlay} disabled={isPlaying}>
+                {isPlaying ? "Playing..." : "Play Music"}
+            </button>
+        </div>
     );
 };
 
